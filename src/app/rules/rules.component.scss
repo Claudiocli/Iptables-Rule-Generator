@@ -1,0 +1,116 @@
+$bg-color: #424242;
+$output-color: rgb(29,27,27);
+$muted-color: mix(#fff, $bg-color, 70%);
+$text-color: #fff;
+$width: 320px;
+
+h3  {
+    color: $text-color;
+    text-align: center;
+}
+form	{
+    max-width: 80vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.2em;
+	text-align: center;
+}
+.chain-action	{
+	display: flex;
+	flex-direction: row;
+	gap: 0.5em;
+	align-items: center;
+	width: 50%;
+}
+.service-checkbox,.destination-checkbox,.other-option-checkbox	{
+	display: inline-flex;
+	align-items: center;
+    gap: 0.8em;
+}
+.other-option-checkbox span {
+    display: inline-flex;
+    gap: 0.4em;
+}
+.source-input,.destination-input,.natting-input  {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 1em;
+}
+.source-input span,.destination-input span,.natting-input span  {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 1em;
+}
+.output-div {
+    width: 80vw;
+    margin-top: 10vh;
+    border-style: solid;
+    border-radius: 12px;
+    border: 5px block;
+    border-color: $output-color;
+    display: block;
+    // box-shadow: 10px 10px 5px 11px $output-color;
+    background-color: $output-color;
+    > p {
+        color: $text-color;
+    }
+}
+input:not([type="checkbox"]) {
+    ::placeholder   {
+        color: $text-color;
+    }
+    background: none;
+    color: $text-color;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: inline-flex;
+    width: $width;
+    box-shadow: 0 0 0 1px #fff;
+    border: none;
+    border-radius: 8px;
+    border-bottom: 1px solid $muted-color;
+    &:focus {
+        box-shadow: 0 0 8px 2px #fff;
+        outline: none;
+    }
+}
+input::placeholder   {
+    // Chrome, Firefox, Opera, Safari 10.1+
+    color: $text-color;
+    // Firefox
+    opacity: 1;
+}
+input:-moz-placeholder   {
+    // Internet Explorer 10-11
+    color: $text-color;
+}
+input::-moz-placeholder  {
+    // Microsoft Edge
+    color: $text-color;
+}
+select {
+    color: $text-color;
+    background-color: mix(#fff, $output-color, 8%);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    &:hover {
+      color: $text-color;
+      box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+    }
+}
+label   {
+    color: $text-color
+}
+.output-div>p   {
+    text-align: center;
+}

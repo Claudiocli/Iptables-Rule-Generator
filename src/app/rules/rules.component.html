@@ -1,0 +1,93 @@
+<!-- Input -->
+<div class="input-div">
+	<h3>Select what the rule has to do</h3>
+	<!-- iptables -A INPUT -i eth0 -j ACCEPT -->
+	<form #f="ngForm">
+		<div class="chain-action">
+			<select [(ngModel)]="chain_selected" [ngModelOptions]="{standalone: true}">
+				<option value="" selected>CHAIN</option>
+				<optgroup label="Default chains">
+					<option value="INPUT">INPUT</option>
+					<option value="FORWARD">FORWARD</option>
+					<option value="OUTPUT">OUTPUT</option>
+				</optgroup>
+				<optgroup label="NAT chains">
+					<option value="PREROUTING">PREROUTING</option>
+					<option value="POSTROUTING">POSTROUTING</option>
+				</optgroup>
+			</select>
+			<input type="text" list="traffic_types" placeholder="Traffic Type" [(ngModel)]="traffic_selected" [ngModelOptions]="{standalone: true}">
+			<datalist id="traffic_types">
+				<option value="tcp">TCP</option>
+				<option value="udp">UDP</option>
+				<option value="ip">IP</option>
+				<option value="icmp">ICMP</option>
+			</datalist>
+			<select [(ngModel)]="action_selected" [ngModelOptions]="{standalone: true}">
+				<option value="">ACTION</option>
+				<optgroup label="Default actions">
+					<option value="ACCEPT">ACCEPT</option>
+					<option value="DROP">DROP</option>
+					<option value="REJECT">REJECT</option>
+				</optgroup>
+				<optgroup label="NAT Actions">
+					<option value="DNAT">DNAT</option>
+					<option value="SNAT">SNAT</option>
+					<option value="MASQUERADE">MASQUERADE</option>
+				</optgroup>
+			</select>
+		</div>
+		<div class="service-checkbox">
+			<label for="source_as_device">Source is a device?</label>
+			<input type="checkbox" id="source_as_device" [(ngModel)]="source_as_device" [ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="source-input">
+			<span [style.display]="source_as_device ? 'none' : 'inline-flex'">
+				<input type="text" placeholder="Source address" [(ngModel)]="source_address" [ngModelOptions]="{standalone: true}">
+				<input type="text" placeholder="Source mask" [(ngModel)]="source_mask" [ngModelOptions]="{standalone: true}">
+			</span>
+			<span [style.display]="source_as_device ? 'inline-flex' : 'none'">
+				<input type="text" placeholder="Source device" [(ngModel)]="source_device" [ngModelOptions]="{standalone: true}">
+			</span>
+			<input type="number" placeholder="Source port" min="1" max="65535" [(ngModel)]="source_port_selected" [ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="destination-checkbox">
+			<label for="destination_as_device">Destination is a device?</label>
+			<input type="checkbox" id="destination_as_device" [(ngModel)]="destination_as_device" [ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="destination-input">
+			<span [style.display]="destination_as_device ? 'none' : 'inline-flex'">
+				<input type="text" placeholder="Destination address" [(ngModel)]="destination_address" [ngModelOptions]="{standalone: true}">
+				<input type="text" placeholder="Destination mask" [(ngModel)]="destination_mask" [ngModelOptions]="{standalone: true}">
+			</span>
+			<span [style.display]="destination_as_device ? 'inline-flex' : 'none'">
+				<input type="text" placeholder="Destination device" [(ngModel)]="destination_device" [ngModelOptions]="{standalone: true}">
+			</span>
+			<input type="number" placeholder="Destination port" min="1" max="65535" [(ngModel)]="destination_port_selected" [ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="natting-input">
+			<span [style.display]="isSNAT() ? 'inline-flex' : 'none'">
+				<input type="text" placeholder="New source address" [(ngModel)]="new_source" [ngModelOptions]="{standalone: true}">
+				<input type="number" placeholder="New source port" min="1" max="65535" [(ngModel)]="new_source_port" [ngModelOptions]="{standalone: true}">
+			</span>
+			<span [style.display]="isDNAT() ? 'inline-flex' : 'none'">
+				<input type="text" placeholder="New destination address" [(ngModel)]="new_destination" [ngModelOptions]="{standalone: true}">
+				<input type="number" placeholder="New destination port" min="1" max="65535" [(ngModel)]="new_destination_port" [ngModelOptions]="{standalone: true}">
+			</span>
+		</div>
+		<div class="other-option-checkbox">
+			<span>
+				<label for="F_option">Flush all the chains</label>
+				<input type="checkbox" id="F_option" (click)="f_if_x()" [checked]="f_option" [(ngModel)]="f_option" [ngModelOptions]="{standalone: true}">
+			</span>
+			<span>
+				<label for="X_option">Delete all not-builtin chains</label>
+				<input type="checkbox" id="X_option" (click)="x_implies_f()" [(ngModel)]="x_option" [ngModelOptions]="{standalone: true}">
+			</span>
+		</div>
+	</form>
+</div>
+<!-- Output -->
+<div class="output-div">
+	<p [style.visibility]="isValid() ? 'visible' : 'hidden'">{{outputRule()}}</p>
+</div>
