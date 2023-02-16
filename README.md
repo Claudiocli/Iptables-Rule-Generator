@@ -1,27 +1,14 @@
-# IptablesRuleGenerator
+# Iptables Rule Generator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+This project was made to help creating firewall rules using `iptables`.
 
-## Development server
+# Contributions
+Every bit of help is appreciated!
+It's strongly suggested to follow the used code-formatting standards and to test your code.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Donation
+You can buy me a coffe:
 
-## Code scaffolding
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=W8ZTJHH89TJJL)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Codice QR](https://user-images.githubusercontent.com/43884655/219439429-12def0fe-354a-4790-9649-dc8947401753.png)
