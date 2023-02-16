@@ -1,15 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
-
-$bg-color: #424242;
+$bg-color: rgb(21, 21, 21);
 
 body	{
 	height: 90vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
 
 	font-family: 'Nunito', sans-serif;
 	background-color: $bg-color;
+}
+
+@media (max-width: 1200px) {
+  body {
+    height: auto;
+  }
 }
