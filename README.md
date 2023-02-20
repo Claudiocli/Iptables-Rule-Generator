@@ -1,12 +1,13 @@
 # Iptables Rule Generator
 
-This project was made to help creating firewall rules using `iptables`.
-
-[Link to the website](https://claudiocli.github.io/Iptables-Rule-Generator/)
+This is the official repository of [Iptables Rule Generator](https://claudiocli.github.io/Iptables-Rule-Generator/), a website made to help creating firewall rules using `iptables`.
 
 # Contributions
-Every bit of help is appreciated!
-It's strongly suggested to follow the used code-formatting standards and to test your code.
+Every bit of help is appreciated! Feel free to [fork](https://github.com/Claudiocli/Iptables-Rule-Generator/fork) the repo and create a [pull request](https://github.com/Claudiocli/Iptables-Rule-Generator/compare) with your changes.
+
+It's strongly suggested to follow the used code-formatting standards, to test your code and to write well formatted commit messages.
+
+Also, if you have any suggestions, whether it's a new feature proposal or a bug, be sure to open a [new issue](https://github.com/Claudiocli/Iptables-Rule-Generator/issues/new)
 
 # Contributors
 [Daniele Avolio](https://github.com/danieleavolio)
