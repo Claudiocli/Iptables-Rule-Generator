@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://claudiocli.github.io/Iptables-Rule-Generator/sitemap.xml
