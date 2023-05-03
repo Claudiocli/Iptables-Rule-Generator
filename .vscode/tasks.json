@@ -37,6 +37,36 @@
           }
         }
       }
+    },
+    {
+      "type": "shell",
+      "label": "build",
+      "group": "build",
+      "command": "ng build --configuration production --base-href 'https://Claudiocli.github.io/Iptables-Rule-Generator/'",
+    },
+    {
+      "type": "shell",
+      "label": "deploy",
+      "group": "build",
+      "command": "npx angular-cli-ghpages --dir=dist/iptables_rule_generator",
+    },
+    {
+      "type": "shell",
+      "label": "build and deploy",
+      "dependsOn":[
+        "build",
+        "deploy"
+      ],
+      "dependsOrder": "sequence",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": false
+      }
     }
   ]
 }
