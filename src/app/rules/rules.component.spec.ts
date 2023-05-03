@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
+
 import { RulesComponent } from './rules.component';
 
 describe('RulesComponent', () => {

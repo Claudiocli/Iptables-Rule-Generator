@@ -2,12 +2,27 @@ $bg-color: #424242;
 $output-color: rgb(29, 27, 27);
 $muted-color: mix(#fff, $bg-color, 70%);
 $text-color: #eeeeee;
+$link-visited-color: #005078;
+$link-color: #00b081;
+$link-hover-color: #008e7e;
 $width: 320px;
 
 h3,
+h4,
 h1 {
   color: $text-color;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+}
+a:visited  {
+  color: $link-visited-color;
+}
+a:hover  {
+  color: $link-hover-color;
 }
 
 .title {
@@ -79,6 +94,7 @@ form {
   background-color: $output-color;
   > p {
     color: $text-color;
+    text-align: center;
   }
 }
 
@@ -156,9 +172,6 @@ select {
 label {
   color: $text-color;
 }
-.output-div > p {
-  text-align: center;
-}
 
 .copy{
   color: white;
@@ -195,4 +208,13 @@ label {
   .natting-input span {
     flex-direction: column;
   }
+}
+table {
+  color: $text-color;
+  justify-content: start;
+  max-width: 150vh;
+  border-radius: 6px;
+  border: 2px solid;
+  border-color: #fff;
+  // border-collapse: collapse;
 }
