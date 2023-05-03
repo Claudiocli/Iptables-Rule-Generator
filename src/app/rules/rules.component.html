@@ -201,4 +201,44 @@
 </div>
 
 <p id="clipboard-text">Rule copied to clipboard </p>
-
+<!-- Iptables Info -->
+<div>
+  <table>
+    <tr>
+      <th>Syntax</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <td><b>-t, --table </b><i>table</i></td>
+      <td>Option that specifies which <i>table</i> the command should operate on</td>
+    </tr>
+    <tr>
+      <td><b>-A, --append </b><i>chain rule-specification</i></td>
+      <td>Append one or more rules to the end of the selected chain</td>
+    </tr>
+    <tr>
+      <td><b>-N, --new-chain </b><i>chain</i></td>
+      <td>Create a new user-defined chain by the given name</td>
+    </tr>
+    <tr>
+      <td><b>-F, --flush </b><i>[chain]</i></td>
+      <td>Flush the selected <i>chain</i> (all, if none was given as argument), that is deleting all rules one by one</td>
+    </tr>
+    <tr>
+      <td><b>-X, --delete-chain </b><i>[chain]</i></td>
+      <td>Delete the user-defined <i>chain</i> (try to delete all of them, if none was given as argument). <b>It's necessary to have no rule inside the <i>chain</i></b></td>
+    </tr>
+    <tr>
+      <td><b>-P, --policy </b><i>chain target</i></td>
+      <td>Set the policy for the <i>chain</i> to the given <i>target</i>. <b>Only built-in chains can have policies</b></td>
+    </tr>
+    <tr>
+      <td><b>-p, --protocol </b>[!] <i>protocol</i></td>
+      <td>The protocol of the packet that the rule has to check (i.e. tcp, udp, icmp). The value <i>all</i> or <i>0</i> specify any protocol. A "!" argument, before the protocol, inverts the selection</td>
+    </tr>
+  </table>
+  <div>
+    <h3>For more exhaustive explanation, consult the <a href="https://linux.die.net/man/8/iptables">iptables man page</a></h3>
+    <h4>If you find any bug or want to suggest something, open an issue in the <a href="https://github.com/Claudiocli/Iptables-Rule-Generator">GitHub repo</a><br/>You can always <a href="https://www.paypal.com/donate/?hosted_button_id=W8ZTJHH89TJJL">support us</a></h4>
+  </div>
+</div>

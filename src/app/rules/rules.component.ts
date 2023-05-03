@@ -38,8 +38,6 @@ export class RulesComponent {
       return false;
     if (this.action_selected == "")
       return false;
-    if (this.traffic_selected == "")
-      return false;
     return true;
   }
 
@@ -57,7 +55,7 @@ export class RulesComponent {
     }
     output += `-p ${this.traffic_selected} `;
     if (this.destination_as_device && this.destination_device != '') {
-      output += `-o ${this.destination_device}${this.destination_port_selected == 0 || this.destination_port_selected == null ? '' : ' --dport ' + this.destination_port_selected}`;
+      output += `-o ${this.destination_device}${this.destination_port_selected == 0 || this.destination_port_selected == null ? '' : ' --dport ' + this.destination_port_selected} `;
     } else if (this.destination_address != '') {
       output += `-d ${this.destination_address}${this.destination_mask == '' ? '' : '/' + this.destination_mask}${this.destination_port_selected == 0 || this.destination_port_selected == null ? '' : ' --dport ' + this.destination_port_selected} `;
     }
