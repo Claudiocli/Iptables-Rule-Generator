@@ -53,7 +53,10 @@ export class RulesComponent {
     } else if (this.source_address != '') {
       output += `-s ${this.source_address}${this.source_mask == '' ? '' : '/' + this.source_mask}${this.source_port_selected == 0 || this.source_port_selected == null ? '' : ' --sport ' + this.source_port_selected} `;
     }
-    output += `-p ${this.traffic_selected} `;
+    if (this.traffic_selected !== '') {
+      output += '-p '
+    }
+    output += `${this.traffic_selected} `;
     if (this.destination_as_device && this.destination_device != '') {
       output += `-o ${this.destination_device}${this.destination_port_selected == 0 || this.destination_port_selected == null ? '' : ' --dport ' + this.destination_port_selected} `;
     } else if (this.destination_address != '') {
