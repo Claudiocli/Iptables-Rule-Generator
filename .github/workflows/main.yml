@@ -1,0 +1,22 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: All things angular
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@[1.4.0] ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+        base_href: https://claudiocli.github.io/Iptables-Rule-Generator/
+        deploy_branch: gh-pages
+        angular_dist_build_folder: dist/iptables_rule_generator
+
+permissions:
+  contents: write
