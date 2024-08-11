@@ -13,7 +13,7 @@ Also, if you have any suggestions, whether it's a new feature proposal or a bug,
 [Daniele Avolio](https://github.com/danieleavolio)
 
 # Donation
-You can buy me a coffe:
+I do believe in free information, so do not feel obligated to donate something. If, however, you still want you can buy me a coffe... :eyes:
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=W8ZTJHH89TJJL)
 
