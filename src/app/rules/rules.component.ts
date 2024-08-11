@@ -99,7 +99,7 @@ export class RulesComponent {
 
 
   public copyToClipboard() {
-    const clip_text = this.f_option ? 'iptables -F; ' : '';
+    let clip_text = this.f_option ? 'iptables -F; ' : '';
     clip_text += this.x_option ? 'iptables -X; ' : '';
     clip_text += this.outputRule();
     navigator.clipboard.writeText(clip_text).then(() => {
