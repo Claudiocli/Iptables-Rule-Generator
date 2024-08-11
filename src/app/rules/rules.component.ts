@@ -99,19 +99,17 @@ export class RulesComponent {
 
 
   public copyToClipboard() {
-    const clip_text = this.f_option ? 'iptables -F; ' : '';
-    clip_text += this.x_option ? 'iptables -X; ' : '';
-    clip_text += this.outputRule();
-    navigator.clipboard.writeText(clip_text).then(() => {
-      this.has_been_copied = true;
-      const clip_element = document.getElementById('clipboard-text');
-      clip_element?.classList.add('vanishing');
-      setTimeout(() => {
-        clip_element?.classList.remove('vanishing');
-      }, 6000);
-    }).catch(err => {
-      console.error('Failed to copy rule to clipboard: ', err);
-    });
+    const el = document.createElement('textarea');
+    this.has_been_copied = true;
+    el.value = this.outputRule();
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    document.getElementById('clipboard-text')?.classList.add('vanishing');
+    setTimeout(() => {
+      document.getElementById('clipboard-text')?.classList.remove('vanishing');
+    }, 6000);
   }
 
 }
