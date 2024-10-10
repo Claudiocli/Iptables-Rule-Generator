@@ -94,6 +94,13 @@ export class RulesComponent {
     return this.f_option;
   }
 
+  public check_port_overflow(event: { target: { value: any; }; }) {
+    if (event.target.value < 0)
+      event.target.value = 0;
+    else if (event.target.value > 65535)
+      event.target.value = 65535;
+  }
+
   //if something changes in the form, reset the copy button
 
 
