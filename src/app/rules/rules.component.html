@@ -88,7 +88,6 @@
         placeholder="Source port"
         min="1"
         max="65535"
-        (input)="check_port_overflow($event)"
         [(ngModel)]="source_port_selected"
         [ngModelOptions]="{ standalone: true }"
       />
@@ -130,7 +129,6 @@
         placeholder="Destination port"
         min="1"
         max="65535"
-        (input)="check_port_overflow($event)"
         [(ngModel)]="destination_port_selected"
         [ngModelOptions]="{ standalone: true }"
       />
@@ -148,7 +146,6 @@
           placeholder="New source port"
           min="1"
           max="65535"
-          (input)="check_port_overflow($event)"
           [(ngModel)]="new_source_port"
           [ngModelOptions]="{ standalone: true }"
         />
@@ -165,7 +162,6 @@
           placeholder="New destination port"
           min="1"
           max="65535"
-          (input)="check_port_overflow($event)"
           [(ngModel)]="new_destination_port"
           [ngModelOptions]="{ standalone: true }"
         />
